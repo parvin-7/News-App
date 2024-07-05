@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="menu-content" id="menuContent">
+            <a href="index.html">Home </a>
+            <a href="contact.html">Contact Us</a>
+            <a href="about.html">About Us </a>
+            <a href="api.html">API</a>
+        </div>
+    </div>
+    <nav>
+        <div class="main-nav container flex">
+            <a href="#" onclick="reload()" class="company-logo">
+                <img src="./assets/news-logo.webp" alt="company logo">
+            </a>
+            <div class="nav-links">
+                <ul class="flex">
+                    <li class="hover-link nav-item" id="cricket" onclick="onNavItemClick('ipl')">Cricket</li>
+                    <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+                    <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+                    <li id="health" onclick="onNavItemClick('health')" class="hover-link nav-item">Health</li>
+                    <li id="travel" onclick="onNavItemClick('travel')" class="hover-link nav-item">Travel</li>
+                    <li id="gaming" onclick="onNavItemClick('gaming')" class="hover-link nav-item">Gaming</li>
+                    <li id="astronomy" onclick="onNavItemClick('astronomy')" class="hover-link nav-item">Astronomy</li>
+                    <li id="crypto" onclick="onNavItemClick('crypto')" class="hover-link nav-item">Crypto</li>
+                </ul>
+            </div>
+            <div class="search-bar flex">
+                <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
+                <button id="search-button" class="search-button">Search</button>
+            </div>
+        </div>
+        <div class="loader" id="loader"></div> 
+    </nav>
+    
+
+    <main>
+        <div class="cards-container container flex" id="cards-container">
+        </div>
+    </main>
+   
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">This is the Title</h3>
+                <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
+                <p class="news-desc" id="news-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae saepe quis voluptatum quisquam vitae doloremque facilis molestias quae ratione cumque!</p>
+            </div>
+        </div>
+    </template>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 News App. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+    <button id="notificationButton"><i class="fas fa-bell"></i></button>
+    <script src="script.js"></script>
+</body>
+</html>
